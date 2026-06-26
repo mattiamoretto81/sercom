@@ -73,9 +73,8 @@ export default function Hero() {
                 alt=""
                 width={o.w}
                 height={o.w}
-                style={{ width: "100%", height: "auto" }}
+                style={{ width: "100%", height: "auto", mixBlendMode: "multiply" }}
                 className="drop-shadow-[0_18px_24px_rgba(0,0,0,0.14)]"
-                style={{ mixBlendMode: "multiply" }}
               />
             </motion.div>
           </div>
