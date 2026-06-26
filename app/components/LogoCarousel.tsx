@@ -4,15 +4,22 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 const CLIENTI = [
-  { nome: "Juventus", file: "juventus.svg" },
-  { nome: "E.ON", file: "eon.svg" },
+  { nome: "Deliveroo", file: "deliveroo.svg" },
+  { nome: "adidas", file: "adidas.svg" },
   { nome: "BPER Banca", file: "bper.svg" },
+  { nome: "Toyota", file: "toyota.svg" },
+  { nome: "Triumph", file: "triumph.svg" },
+  { nome: "Scuola Normale Superiore", file: "sns.svg" },
+  { nome: "Vinavil", file: "vinavil.svg" },
+  { nome: "Roadhouse", file: "roadhouse.svg" },
+  { nome: "HIKVISION", file: "hikvision.svg" },
+  { nome: "Simecom", file: "simecom.svg" },
+  { nome: "Hella", file: "hella.svg" },
+  { nome: "Kone", file: "kone.svg" },
+  { nome: "Pinalli", file: "pinalli.svg" },
 ];
 
-// Ripetuto più volte per dare densità visiva alla striscia con poche referenze,
-// poi raddoppiato per ottenere un loop orizzontale continuo e senza scatti.
-const BASE = [...CLIENTI, ...CLIENTI, ...CLIENTI, ...CLIENTI, ...CLIENTI, ...CLIENTI];
-const LOOP = [...BASE, ...BASE];
+const LOOP = [...CLIENTI, ...CLIENTI];
 
 export default function LogoCarousel() {
   return (

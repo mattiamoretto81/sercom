@@ -6,21 +6,26 @@ import { track, TRACK_EVENTS } from "../lib/track";
 import RaccoltaBox from "./RaccoltaBox";
 
 const FLOATING_OBJECTS = [
-  // sinistra (top % calcolati sull'altezza reale di ogni immagine per evitare sovrapposizioni)
-  { src: "/images/objects/tavernello-hats.png", w: 180, top: "1%", left: "0%", rotate: -8, depth: "front", duration: 8, delay: 0, xDir: 1, xAmp: 32 },
-  { src: "/images/objects/deliveroo-opener.png", w: 100, top: "14%", left: "7%", rotate: 10, depth: "back", duration: 10, delay: 1.1, xDir: -1, xAmp: 24 },
-  { src: "/images/objects/roadhouse-burger.png", w: 130, top: "25%", left: "1%", rotate: 6, depth: "front", duration: 7, delay: 0.4, xDir: -1, xAmp: 28 },
-  { src: "/images/objects/pinalli-tin.png", w: 90, top: "49%", left: "8%", rotate: -10, depth: "back", duration: 9.5, delay: 1.6, xDir: 1, xAmp: 22 },
-  { src: "/images/objects/triumph-shirt.png", w: 160, top: "59%", left: "0%", rotate: -7, depth: "front", duration: 8.5, delay: 0.2, xDir: 1, xAmp: 32 },
-  { src: "/images/objects/tavernello-tote.png", w: 95, top: "83%", left: "7%", rotate: 5, depth: "back", duration: 10, delay: 0.8, xDir: -1, xAmp: 22 },
+  // sinistra
+  { src: "/images/objects/tavernello-hats.png", w: 288, top: "3%", left: "2%", rotate: -8, duration: 8, delay: 0, xDir: 1, xAmp: 20, lane: "outer" },
+  { src: "/images/objects/deliveroo-opener.png", w: 160, top: "45%", left: "5%", rotate: 10, duration: 10, delay: 1.1, xDir: -1, xAmp: 20, lane: "outer" },
+  { src: "/images/objects/roadhouse-new.png", w: 416, top: "25%", left: "3%", rotate: 6, duration: 7, delay: 0.4, xDir: -1, xAmp: 20, lane: "outer" },
+  { src: "/images/objects/triumph-shirt.png", w: 160, top: "59%", left: "2%", rotate: -7, duration: 8.5, delay: 0.2, xDir: 1, xAmp: 20, lane: "outer" },
+  // sinistra, corsia interna
+  { src: "/images/objects/cts-keychain.png", w: 67, top: "8%", left: "16%", rotate: 9, duration: 9.8, delay: 1.2, xDir: -1, xAmp: 14, lane: "inner" },
+  { src: "/images/objects/burrata-portagettone.png", w: 240, top: "48%", left: "16%", rotate: -8, duration: 10.3, delay: 0.5, xDir: 1, xAmp: 12, lane: "inner" },
 
   // destra
-  { src: "/images/objects/toyota-blue.png", w: 220, top: "1%", right: "0%", rotate: 7, depth: "front", duration: 8, delay: 0.3, xDir: -1, xAmp: 32 },
-  { src: "/images/objects/deliveroo-cards.png", w: 85, top: "21%", right: "8%", rotate: -9, depth: "back", duration: 9.5, delay: 1.3, xDir: 1, xAmp: 22 },
-  { src: "/images/objects/deliveroo-mug.png", w: 150, top: "33%", right: "1%", rotate: -6, depth: "front", duration: 7, delay: 0.9, xDir: 1, xAmp: 28 },
-  { src: "/images/objects/estra-kit.png", w: 110, top: "51%", right: "7%", rotate: 8, depth: "back", duration: 10.5, delay: 1.5, xDir: -1, xAmp: 22 },
-  { src: "/images/objects/toyota-red.png", w: 200, top: "63%", right: "0%", rotate: 8, depth: "front", duration: 8, delay: 0.7, xDir: -1, xAmp: 32 },
-  { src: "/images/objects/tavernello-giftbox.png", w: 110, top: "78%", right: "6%", rotate: -5, depth: "back", duration: 9, delay: 0.5, xDir: 1, xAmp: 22 },
+  { src: "/images/objects/toyota-blue.png", w: 352, top: "3%", right: "2%", rotate: 7, duration: 8, delay: 0.3, xDir: -1, xAmp: 20, lane: "outer" },
+  { src: "/images/objects/deliveroo-cards.png", w: 200, top: "21%", right: "8%", rotate: -9, duration: 9.5, delay: 1.3, xDir: 1, xAmp: 18, lane: "outer" },
+  { src: "/images/objects/deliveroo-mug.png", w: 240, top: "33%", right: "3%", rotate: -6, duration: 7, delay: 0.9, xDir: 1, xAmp: 20, lane: "outer" },
+  { src: "/images/objects/estra-kit.png", w: 176, top: "51%", right: "7%", rotate: 8, duration: 10.5, delay: 1.5, xDir: -1, xAmp: 18, lane: "outer" },
+  { src: "/images/objects/toyota-red.png", w: 320, top: "63%", right: "2%", rotate: 8, duration: 8, delay: 0.7, xDir: -1, xAmp: 20, lane: "outer" },
+  { src: "/images/objects/tavernello-giftbox.png", w: 176, top: "78%", right: "6%", rotate: -5, duration: 9, delay: 0.5, xDir: 1, xAmp: 18, lane: "outer" },
+  { src: "/images/objects/yokohama-backpack.png", w: 260, top: "72%", left: "4%", rotate: 5, duration: 9.2, delay: 1.0, xDir: -1, xAmp: 18, lane: "outer" },
+  // destra, corsia interna
+  { src: "/images/objects/deliveroo-powerbank.png", w: 104, top: "35%", left: "16%", rotate: -6, duration: 7.8, delay: 0.9, xDir: 1, xAmp: 14, lane: "inner" },
+  { src: "/images/objects/hella-woodcar.png", w: 104, top: "56%", right: "16%", rotate: 5, duration: 9.4, delay: 1.4, xDir: -1, xAmp: 14, lane: "inner" },
 ];
 
 export default function Hero() {
@@ -36,7 +41,11 @@ export default function Hero() {
 
       <div className="absolute inset-0 z-0 hidden 2xl:block pointer-events-none">
         {FLOATING_OBJECTS.map((o, i) => (
-          <div key={i} className="absolute" style={{ top: o.top, left: o.left, right: o.right, width: o.w }}>
+          <div
+            key={i}
+            className={o.lane === "inner" ? "absolute hidden min-[1800px]:block" : "absolute"}
+            style={{ top: o.top, left: o.left, right: o.right, width: o.w }}
+          >
             <motion.div
               className="absolute left-1/2 -translate-x-1/2 rounded-full bg-black blur-md"
               style={{
@@ -51,7 +60,7 @@ export default function Hero() {
               transition={{ duration: o.duration, delay: o.delay, repeat: Infinity, ease: "easeInOut" }}
             />
             <motion.div
-              className={o.depth === "back" ? "relative opacity-85 blur-[3px]" : "relative opacity-95"}
+              className="relative"
               animate={{
                 y: [0, -18, 0],
                 x: [-o.xAmp, o.xAmp, -o.xAmp].map((v) => v * o.xDir),
@@ -126,7 +135,7 @@ export default function Hero() {
         </motion.p>
 
         <div className="mt-10">
-          <RaccoltaBox location="hero-quickform" eager mode="scroll" />
+          <RaccoltaBox location="hero-quickform" eager />
         </div>
 
         <motion.p

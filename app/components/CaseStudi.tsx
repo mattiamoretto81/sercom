@@ -8,6 +8,7 @@ const CASI = [
   {
     cliente: "Deliveroo",
     settore: "Food delivery",
+    logo: "/images/clients/deliveroo.svg",
     img: "/images/case-deliveroo.webp",
     sfida:
       "Offrire ai partecipanti di vari eventi gadget originali, in sintonia con un brand giovane e legato al food.",
@@ -17,6 +18,7 @@ const CASI = [
   {
     cliente: "Kone",
     settore: "Multinazionale ascensori",
+    logo: "/images/clients/kone.svg",
     img: "/images/case-kone.webp",
     sfida:
       "Supportare il lancio di una guida tecnica per progettisti e architetti via mailing.",
@@ -27,25 +29,27 @@ const CASI = [
     quoteAuthor: "Kone, L.P.",
   },
   {
-    cliente: "DPAM",
-    settore: "Gestione patrimoniale, Gruppo Indosuez",
-    img: "/images/case-dpam.webp",
+    cliente: "Toyota",
+    settore: "Automotive",
+    logo: "/images/clients/toyota.svg",
+    img: "/images/case-toyota.webp",
     sfida:
-      "Gadget utili, durevoli e sostenibili per fiere finanziarie come il Salone del Risparmio, coerenti con i valori ESG del brand.",
+      "Creare un oggetto che avesse la duplice funzione di collocarsi nel mondo automotive, legato al brand Toyota, ma realizzato totalmente custom.",
     soluzione:
-      "Soluzioni promozionali in materiali riciclati e certificati, progettate evento per evento mantenendo coerenza con i valori aziendali.",
+      "Miniature fedeli di autovetture Toyota con cassa Bluetooth integrata sotto la scocca — oggetto decorativo per le scrivanie delle concessionarie e regalo per i clienti che acquistavano un'auto.",
   },
   {
-    cliente: "Scuola Normale Superiore",
-    settore: "Istituzionale",
-    img: "/images/case-sns.webp",
+    cliente: "Pinalli",
+    settore: "Beauty retail",
+    logo: "/images/clients/pinalli.svg",
+    img: "/images/case-pinalli.webp",
     sfida:
-      "Un regalo aziendale unico, che trasmettesse senso di appartenenza a un'istituzione importante.",
+      "Creare gadget promozionali per la Sagra Fagiana 2024 di VeraLab a Brescia: abbigliamento per lo staff e gift a tema luna park, in linea con la nuova immagine fresca e colorata del brand.",
     soluzione:
-      "Quadernino in similpelle e penna abbinata, personalizzati con nome del destinatario e finiture Swiss Made.",
+      "T-shirt personalizzate per il personale, barattolino caramelle riutilizzabile con tappo rosa e profumatori auto full custom in due varianti colore, con stampa fronte/retro.",
     quote:
-      "La consulenza creativa di Sercom è stata per noi un valore aggiunto. Prodotti particolari e progetti personalizzati, non il solito gadget da catalogo.",
-    quoteAuthor: "Communication Specialist, Scuola Normale Superiore",
+      "Abbiamo fatto dei brainstorming insieme per trovare delle soluzioni che rispondessero al meglio alle nostre esigenze: alla fine siamo riusciti a creare dei gadget qualitativi e in linea con la nostra personalità.",
+    quoteAuthor: "G.B., Responsabile Marketing & Comunicazione, Pinalli",
   },
 ];
 
@@ -90,8 +94,18 @@ export default function CaseStudi() {
               </div>
 
               <div className="px-7 py-7">
-                <div className="flex items-baseline justify-between gap-3">
-                  <h3 className="text-xl font-bold text-black">{c.cliente}</h3>
+                <div className="flex items-center justify-between gap-3">
+                  {c.logo ? (
+                    <Image
+                      src={c.logo}
+                      alt={c.cliente}
+                      width={100}
+                      height={36}
+                      className="h-7 w-auto object-contain"
+                    />
+                  ) : (
+                    <h3 className="text-xl font-bold text-black">{c.cliente}</h3>
+                  )}
                   <span className="text-[12px] font-semibold uppercase tracking-wide text-black/40">
                     {c.settore}
                   </span>
