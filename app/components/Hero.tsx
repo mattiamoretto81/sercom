@@ -49,13 +49,13 @@ export default function Hero() {
             <motion.div
               className="absolute left-1/2 -translate-x-1/2 rounded-full bg-black blur-md"
               style={{
-                bottom: o.depth === "back" ? "-8px" : "-16px",
+                bottom: "-16px",
                 width: o.w * 0.7,
-                height: o.depth === "back" ? 8 : 14,
+                height: 14,
               }}
               animate={{
                 scaleX: [1, 0.7, 1],
-                opacity: o.depth === "back" ? [0.1, 0.04, 0.1] : [0.22, 0.09, 0.22],
+                opacity: [0.22, 0.09, 0.22],
               }}
               transition={{ duration: o.duration, delay: o.delay, repeat: Infinity, ease: "easeInOut" }}
             />
@@ -74,11 +74,7 @@ export default function Hero() {
                 width={o.w}
                 height={o.w}
                 style={{ width: "100%", height: "auto" }}
-                className={
-                  o.depth === "back"
-                    ? "drop-shadow-[0_8px_12px_rgba(0,0,0,0.08)]"
-                    : "drop-shadow-[0_18px_24px_rgba(0,0,0,0.14)]"
-                }
+                className="drop-shadow-[0_18px_24px_rgba(0,0,0,0.14)]"
               />
             </motion.div>
           </div>
